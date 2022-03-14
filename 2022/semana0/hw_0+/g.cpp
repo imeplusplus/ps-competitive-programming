@@ -2,15 +2,21 @@
 
 using namespace std;
 
+map<string,int> m;
+int n;
+
 int main(){
-    ios_base::sync_with_stdio(NULL);
-    cin.tie(0); 
-    // n muito grande, leia como string
-    string n;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     cin >> n;
-    int ans = 0;
-    for(int i = 0; i < n.size(); i++) ans += n[i] - '0';
-    if((ans % 9) == 0) cout << "Yes\n";
-    else cout << "No\n";
+    for(int i = 0; i < n; i++){
+        string s;
+        cin >> s;
+        m[s]++;
+    }
+    cout << "AC x " << m["AC"] << "\n";
+    cout << "WA x " << m["WA"] << "\n";
+    cout << "TLE x " << m["TLE"] << "\n";
+    cout << "RE x " << m["RE"] << "\n";
     return 0;
 }

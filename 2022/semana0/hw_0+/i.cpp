@@ -4,25 +4,16 @@ using namespace std;
 
 const int N = 100;
 
-int a[N];
+int f[N];
 
 int main(){
-    int n, sum = 0;
-    scanf("%d", &n);
-    for(int i = 0; i < n; i++){
-        scanf("%d",&a[i]);
-        sum += a[i];
-    }
-    int ans = 0;
-    for(int l = 0; l < n; l++){
-        for(int r = l; r < n; r++){
-            int dif = 0;
-            for(int i = l; i <= r; i++){
-                if(a[i] == 1) dif--;
-                else dif++;
-            }
-            ans = max(ans, sum + dif);
-        }
+    int n, m;
+    scanf("%d%d",&n, &m);
+    for(int i = 0; i < m; i++) scanf("%d", &f[i]);
+    sort(f,  f + m);
+    int ans = f[n-1] - f[0];
+    for(int i = 0; i + n - 1 < m; i++){
+        ans = min(ans, f[i + n - 1] - f[i]);
     }
     printf("%d\n", ans);
     return 0;

@@ -2,12 +2,15 @@
 
 using namespace std;
 
-const double PI = acos(-1.);
-
 int main(){
-    int n, r;
-    scanf("%d%d", &n, &r);
-    double ans = r / ((2*sin(PI/2 - PI/n)/sin(2*PI/n)) - 1);
-    printf("%.10lf\n", ans);
+    ios_base::sync_with_stdio(NULL);
+    cin.tie(0); 
+    // n muito grande, leia como string
+    string n;
+    cin >> n;
+    int ans = 0;
+    for(int i = 0; i < n.size(); i++) ans += n[i] - '0';
+    if((ans % 9) == 0) cout << "Yes\n";
+    else cout << "No\n";
     return 0;
 }

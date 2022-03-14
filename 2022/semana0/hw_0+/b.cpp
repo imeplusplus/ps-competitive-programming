@@ -3,11 +3,13 @@
 using namespace std;
 
 int main(){
-    int n, ans = 0;
-    scanf("%d", &n);
-    for(int i = 1; i < n; i++){
-        ans += (n-1)/i;
+    int x, y;
+    scanf("%d%d", &x, &y);
+    bool ok = false;
+    for(int i = 0; i <= x; i++){
+        if(i*2 + (x - i)*4 == y) ok = true; 
     }
-    printf("%d\n", ans);
+    if(ok) printf("Yes\n");
+    else printf("No\n");
     return 0;
 }
