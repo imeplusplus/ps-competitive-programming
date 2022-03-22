@@ -2,24 +2,24 @@
 
 using namespace std;
 
-const int N = 1e5+5;
-
-int resposta[N];
+//para que o número seja o maior possivel, basta deletar o primeiro zero
+//caso não tenha zero, deleta qualquer "1"
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     string s;
     cin >> s;
-    bool erased = false;
     for(int i = 0; i < s.size(); i++){
         if(s[i] == '0'){
+						//apaga o primeiro zero q achar
             s.erase(s.begin() + i);
-            erased = true;
-            break;
+            cout << s << "\n";
+            return 0;
         }
     }
-    if(erased == false) s.erase(s.begin());
+		//se n achar zero, deleta qualquer 1
+    s.erase(s.begin());
     cout << s << "\n";
     return 0;
 }

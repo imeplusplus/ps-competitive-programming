@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//usar o valor do vetor dado como posição no vetor resposta e a posição como valor
+
 const int N = 1e5+5;
 
 int resposta[N];

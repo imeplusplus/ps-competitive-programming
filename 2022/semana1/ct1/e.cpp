@@ -1,31 +1,33 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-const int N = 1e5+5;
+const int N = 1e6 + 6;
+int n, q, x[N], m;
 
-int shops[N];
+//com m moedas, é possivel comprar qualquer beecola que custe m ou menos
+//logo a resposta é a ultima posição cujo valor seja <= à m 
+//é possível codar uma busca binária para tal, como comentado abaixo, mas
+//a posição anterior ao retorno do upper_bound dá a mesma resposta
 
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int n;
-    cin >> n;
-    //vector <int> shops(n)
-    for(int i = 0; i < n; i++){
-        cin >> shops[i];
-    }
-    //sort(shops.begin(), shops.end());
-    sort(shops, shops + n);
+// int b_search(int l, int r, int v){
+// 	int mid = (l+r)/2;
+// 	while(l<r){
+// 		if(x[mid] > v) r = mid-1;
+// 		else l = mid;
+// 	}
+//	return mid;
+// }
 
-    int q;
-    cin >> q;
-    for(int i = 0; i < q; i++){
-        int x;
-        cin >> x;
-        int distance = (upper_bound(shops, shops + n, x) - shops);
-        //int distance = (upper_bound(shops.begin(), shops.end() + n, x) - shops.begin());
-        cout << distance << "\n";
-    }
-    return 0;
+int main() {
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	cin >> n;
+	for (int i = 0; i < n; i++) cin >> x[i];
+	sort(x, x + n);
+	cin >> q;
+	while (q--) {
+		cin >> m;
+		cout << upper_bound(x, x + n, m) - x << '\n';
+	}
+	return 0;
 }
