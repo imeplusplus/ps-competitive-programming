@@ -28,6 +28,8 @@ int main() {
         cout << -1 << "\n";
     } else {
         while(f.size() > k) {
+            // dentro desse while, eu guardo o último número do vetor em uma variável separada,
+            // removo o último número, e multiplico o novo último pelo valor guardado
             int x = f.back();
             f.pop_back();
             f.back() *= x;
