@@ -5,6 +5,8 @@ using namespace std;
 
 A ideia da questão é o seguinte: achar o menor número, múltiplo de n, tal que sua divisão por n seja menor ou igual a k.
 
+Complexidade do Código: O(sqrt(n))
+
 */
 
 int main() {
