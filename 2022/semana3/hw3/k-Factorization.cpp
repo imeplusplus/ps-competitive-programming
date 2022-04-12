@@ -7,6 +7,8 @@ using namespace std;
 A maneira de pegar a maior quantidade de divisores é pegando a fatoração prima do número.
 Dessa forma, caso a quantidade seja maior que o k, você pode ir mulitplicando até a quantidade de números presentes der k.
 
+Complexidade do Código: O(sqrt(n))
+
 */
 
 int main() {
