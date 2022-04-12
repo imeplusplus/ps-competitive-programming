@@ -6,6 +6,8 @@ using namespace std;
 
 Veja que para que a condição do problema ocorra, o menor número do vetor tem que dividir todos os números.
 
+Complexidade do Código: O(n)
+
 */
 
 int main() {
