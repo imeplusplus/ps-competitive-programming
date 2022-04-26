@@ -20,6 +20,7 @@ int dy[] = {1, -1, 2, -2, 2, -2, 1, -1};
 bool vis[9][9];
 
 int bfs(pair<int, int> a, pair<int, int> b) {
+    //o primero número do pair representa a quantidade de passos andados
     queue<pair<int, pair<int, int>>> q;
     memset(vis, false, sizeof(vis));
     int ans = 0;
