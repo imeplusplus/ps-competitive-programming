@@ -30,9 +30,9 @@ void dfs(int x, int par = -1, int cnt = 0) {
     if(cnt > m) {
         return;
     }
-    for(auto e : adj[x]) {
-        if(!vis[e]) {
-            dfs(e, x, cnt);
+    for(int i = 0; i < adj[x].size(); i++) {
+        if(!vis[adj[x][i]]) {
+            dfs(adj[x][i], x, cnt);
         }
     }
     //verificação de se é uma folha, a outra condição é para não haver confusão com a origem
