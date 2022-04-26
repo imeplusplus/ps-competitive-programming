@@ -28,6 +28,7 @@ void dfs(int x, int par = -1, int cnt = 0) {
     } else {
         cnt = 0;
     }
+    //caso o contador passe do limite, pode parar o dfs aqui
     if(cnt > m) {
         return;
     }
@@ -36,6 +37,7 @@ void dfs(int x, int par = -1, int cnt = 0) {
             dfs(e, x, cnt);
         }
     }
+    //verificação de se é uma folha, a outra condição é para não haver confusão com a origem
     if(adj[x].size() == 1 and x) {
         ans++;
     }
