@@ -52,6 +52,7 @@ int main() {
     for(int i = 1; i < n; i++) {
         int u, v;
         cin >> u >> v;
+        //nesse caso acabei querendo usar os nós 0-indexado, assim eu subtraio um de cada vez
         adj[--u].push_back(--v);
         adj[v].push_back(u);
     }
