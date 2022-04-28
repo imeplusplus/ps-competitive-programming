@@ -19,6 +19,7 @@ int v[N];
 bool vis[N];
 int ans = 0, n, m;
 
+//o par aqui é curto para "parent". já que estamos descendo a árvore, sabemos que o nó não poderá voltar para o pai, então somente arrastar quem é durante o dfs.
 void dfs(int x, int par = -1, int cnt = 0) {
     vis[x] = true;
     if(v[x]) {
