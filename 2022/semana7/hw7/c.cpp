@@ -3,6 +3,10 @@
         read all inputs and save
         do the algorithm to compress the coordinates
         apply segtree for maximum in range, with lazy update
+    
+    things to consider:
+        the size of arrays etc should be equal the number of unique items!!!
+        in this question, there may be 4 * 10^5 unique items, so pay attention!!
 */
 
 #include <bits/stdc++.h>

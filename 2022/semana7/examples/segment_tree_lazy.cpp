@@ -52,7 +52,7 @@ void update (int p, int l, int r, int i, int j, int k) {
     }
     update(2*p, l, (l+r)/2, i, j, k);
     update(2*p+1, (l+r)/2+1, r, i, j, k);
-    if (l != r) st[p] = st[2*p] + st[2*p+1];
+    st[p] = st[2*p] + st[2*p+1];
     //st[p] = min(st[2*p], st[2*p+1]);
     //st[p] = max(st[2*p], st[2*p+1]);
 }
