@@ -1,11 +1,3 @@
-/*
-    The key idea is to create a segtree with pairs.
-    pairs represent {value of the maximum element in that range, position of the maximum element}
-    so we will search for i first and find max, remove it from segtree ,
-    then we remove from segtree (because i != j) and search for max a[j], then w add the value removed again
-
-*/
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -68,13 +60,13 @@ int main(){
         int x, y;
         cin >> op >> x >> y;
         if(op == 'Q'){
-            //max1 is between x and y
+            //max1 is between x and n
             pair<int, int> max1 = query(1, 1, n, x, y);
             //remove temporarily from segtree because i != j;
             update(1, 1, n, max1.nd, 0);
 
 
-            //max2 is between x and y
+            //max1 is between y and n
             pair<int, int> max2 = query(1, 1, n, x, y);
             cout << max1.st + max2.st << "\n";
 

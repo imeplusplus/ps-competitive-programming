@@ -29,7 +29,7 @@ int n[2], vis[2][N], dist[2][N];
 vector<int> adj[2][N];
 
 void dfs(int u, int id){
-    vis[id][u] = 1;
+    vis[id][u] = 1;  
     for(auto v : adj[id][u]){
         if(!vis[id][v]){
             dist[id][v] = dist[id][u] + 1;
