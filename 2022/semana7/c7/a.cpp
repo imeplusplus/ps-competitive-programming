@@ -4,6 +4,8 @@
                         transition: dp[i] = max(dp[i + 1],                  going to the next planet without picking gems at planet i
                                                 dp[i + k + 1] + r[i]        going to the next possible planet picking all gems
                                                 dp[i + k/2 + 1] + r[i]/2)   going to the next possible planet picking only half gems
+    
+    Problem solved with a recursion, try to solve it in an iterative way.
 */
 
 #include <bits/stdc++.h>
