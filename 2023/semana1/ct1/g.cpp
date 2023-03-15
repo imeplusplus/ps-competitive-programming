@@ -1,27 +1,35 @@
-// complexidade do código: O(nlog(n))
-
 #include <bits/stdc++.h>
 
 using namespace std;
 
-//para que o número seja o maior possivel, basta deletar o primeiro zero
-//caso não tenha zero, deleta qualquer "1"
+const int N = 2e5 + 5;
 
-int main() {
+int songs[N], n;
+
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    string s;
-    cin >> s;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == '0') {
-            //apaga o primeiro zero q achar
-            s.erase(s.begin() + i);
-            cout << s << "\n";
-            return 0;
+    cin >> n;
+    for(int i = 0; i < n; i++) cin >> songs[i];
+
+    //two pointers
+    set<int> unique_songs;
+    int ans = 0;
+    //for: calcula a maior sequencia que termina na posicao r
+    for(int l = 0, r = 0; r < n; r++){
+        /*
+            tento colocar a musica da posição r
+            enquanto aquela musica existir no set, nao posso inserir
+            removo a musica da posicao l
+            ando com ponteiro l
+        */
+        while(unique_songs.count(songs[r])){
+            unique_songs.erase(songs[l]);
+            l++;
         }
+        unique_songs.insert(songs[r]);
+        ans = max(ans, r - l + 1);
     }
-    //se n achar zero, deleta qualquer 1
-    s.erase(s.begin());
-    cout << s << "\n";
+    cout << ans << "\n";
     return 0;
 }
